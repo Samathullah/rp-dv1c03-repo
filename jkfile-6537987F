@@ -71,12 +71,25 @@ pipeline {
         }
         stage('ST5-6537987F') {
               steps {
-                  *Prompt:"Hello 6537987F, permission to proceed to next phase?"
-                *if "proceed" is selected,
-                echo"ST5-6537987F: Approve to proceed to next phase"
-                *if abort is selected, whole pipeline aborts.
+                 script {
+                    def userinput = input(
+                        id: 'Userinput',
+                        message: "Hello 6537987F, permission to proceed to the next phase?"
+                        parameters: [
+                            choise(choices: ['Proceed', 'Abort'])
+                                    ]
+                                )
+                        if (userinput =='Proceed') {
+                            echo "ST5-6537987F: Approve to proceed to the next phase"
+                                                    }
+                        else
+                            {
+                            error "Pipline aborted at ST5-6537987F"
+                 
+                            }
+                    }
+                }
             }  
-        }
         stage('ST6-6537987F') {
               steps {
                   echo "ST6-6537987F: Ready for next phase"
