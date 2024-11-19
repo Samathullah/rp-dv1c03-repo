@@ -74,9 +74,9 @@ pipeline {
                  script {
                     def userinput = input(
                         id: 'userinput',
-                        message: "Hello 6537987F, permission to proceed to the next phase?"
+                        message: "Hello 6537987F, permission to proceed to the next phase?",
                         parameters: [
-                            choise(choices: ['Proceed', 'Abort'])
+                            choice(choices: ['Proceed', 'Abort'])
                                     ]
                                 )
                         if (userinput =='Proceed') {
