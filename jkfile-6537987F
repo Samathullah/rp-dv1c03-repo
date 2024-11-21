@@ -76,13 +76,13 @@ pipeline {
                         id: 'userinput',
                         message: "Hello 6537987F, permission to proceed to the next phase?",
                         parameters: [
-                            choice(choices: ['Proceed', 'Abort'])
+                            choice(choices: "Proceed\nAbort", description: 'Select an option:')
                                     ]
                                 )
                         if (userinput =='Proceed') {
                             echo "ST5-6537987F: Approve to proceed to the next phase"
-                                                    }
-                        else
+                                 }
+                            else
                             {
                             error "Pipline aborted at ST5-6537987F"
                  
