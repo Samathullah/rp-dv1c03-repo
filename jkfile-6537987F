@@ -39,7 +39,7 @@ pipeline {
                     """
 
                     sh"""
-                    docker run -d -it -p 3500:32900 --name svr-6537987f apache2 img-base-6537987f
+                    docker run -d -it -p 3500:32900 --name svr-6537987f img-base-6537987f
                     """
                         }
                 echo "ST2-6537987F: Server Setup Completed"
