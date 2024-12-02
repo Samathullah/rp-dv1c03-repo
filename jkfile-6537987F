@@ -75,7 +75,7 @@ pipeline {
                         
                         message: "Hello 6537987F, permission to proceed to the next phase?",
                         parameters: [
-                            choice(name: 'Proceed or Abort', choices: "Proceed\nAbort")
+                            choice(choices: "Proceed\nAbort")
                                     ]
                                 )
                         if (userinput =='Proceed') {
